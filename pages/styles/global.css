@@ -76,3 +76,14 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+
+/* Fonts */
+@font-face {
+  font-family: Caladea;
+  src: url("/Caladea-Regular.ttf");
+}
+@font-face {
+  font-family: Montserrat;
+  src: url("/Montserrate-Regular.ttf");
+}

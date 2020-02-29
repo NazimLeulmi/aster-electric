@@ -1,0 +1,14 @@
+.serviceContainer{
+  display:flex;
+}
+.serviceLogo{
+  width:25px;
+  height:25px;
+  margin-right:5px;
+}
+.service {
+  font-family: Caladea;
+  font-weight:300;
+  font-size: 1.1em;
+  color:#223843;
+}
