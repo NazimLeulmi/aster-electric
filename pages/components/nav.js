@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styles from "../styles/nav.module.css"
 export default function About() {
 	return (

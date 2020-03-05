@@ -1,0 +1,31 @@
+.aboutContainer{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    padding:15px;
+}
+.aboutHeader {
+  color:#3448BE;
+  font-family: Montserrat;
+  font-weight: 500;
+  letter-spacing:1.5px;
+}
+.aboutParagraph {
+  color:#223843;
+  font-family: Caladea;
+  font-size:1.1em;
+}
+.aboutLink {
+  text-decoration: none;
+  border:1px solid #3448BE;
+  color:#3448BE;
+  font-family: Montserrat;
+  width:150px;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  padding:10px;
+  align-self:flex-end;
+  border-radius:5px;
+  margin:10px;
+}

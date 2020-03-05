@@ -1,0 +1,29 @@
+.servicesContainer  {
+    composes: aboutContainer from "./intro.module.css";
+    background-color:#eff1f3;
+    flex:1;
+}
+.servicesIntro  {
+    composes: servicesContainer;
+}
+.servicesHeader{
+    composes: aboutHeader from "./intro.module.css";
+    align-self:center;
+    margin:10px;
+    color:#223843;
+}
+.servicesImg{
+    width:75px;
+    align-self:center;
+    margin:5px;
+}
+
+.servicesFlex{
+    display:flex;
+    flex-direction: column;
+}
+@media only screen and (min-width: 550px) {
+  .servicesFlex {
+    flex-direction: row;
+  }
+}
