@@ -1,0 +1,33 @@
+.header {
+  composes: aboutHeader from "./intro.module.css";
+  background:rgba(0,0,0,.10);
+}
+.rating {
+  composes: aboutHeader from "./intro.module.css";
+}
+.avatar{
+  width:50px;
+  margin-top:15px;
+}
+.from {
+  composes: servicesHeader from "./services.module.css";
+  color:#223843;
+  margin:0;
+}
+.text {
+  composes: aboutParagraph from "./intro.module.css";
+  text-align:center;
+  width:80%;
+  margin:5px;
+}
+.slide{
+  position: relative;
+  display:flex !important;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  background:rgba(0,0,0,.10);
+}
+.stars {
+  display:flex;
+}

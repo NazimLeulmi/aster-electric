@@ -1,21 +1,21 @@
+.layout {
+  position:relative;
+  background-color:#eff1f3;
+  width:100%;
+  display:flex;
+  flex-direction: column;
+}
 .container{
-    background-color:#eff1f3;
-    min-height:100vh;
-    position:relative;
-    display:flex;
-    flex-direction: column;
+  composes: layout;
+  flex-direction: column !important;
 }
 @media only screen and (min-width: 850px) {
+  .layout {
+    flex-direction: row;
+  }
   .container {
-    flex-direction: row;
+    width:82vw;
+    height:100vh;
+    overflow: auto;
   }
-  .nav {
-    flex-direction: row;
-  }
-}
-
-
-.reviewsContainer{
-   composes:aboutContainer from "./intro.module.css";
-   background-color:#CAD9FA;
 }

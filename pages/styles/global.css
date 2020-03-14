@@ -87,3 +87,16 @@ select {
   font-family: Montserrat;
   src: url("/Montserrate-Regular.ttf");
 }
+.slick-arrow{
+  display:  none !important;  
+}
+.slick-dots {
+  background:rgba(0,0,0,.10);
+  border:0;
+  outline:0;
+}
+.slick-dots li button::before {
+  font-family: 'slick';
+  font-size: 10px !important;
+  line-height: 20px !important;
+}

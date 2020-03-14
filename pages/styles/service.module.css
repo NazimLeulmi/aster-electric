@@ -1,9 +1,10 @@
 .serviceContainer{
   display:flex;
+  margin-bottom:5px;
+  align-items: center;
 }
 .serviceLogo{
-  width:25px;
-  height:25px;
+  width:15px;
   margin-right:5px;
 }
 .service {

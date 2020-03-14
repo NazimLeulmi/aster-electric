@@ -5,6 +5,7 @@ import Hero from "./components/hero";
 import Services from "./components/services";
 import Intro from "./components/intro";
 import ServicesIntro from "./components/servIntro";
+import Reviews from "./components/reviews";
 
 const description = `Aster Electric offers quality electrical services in 
 Victoria, BC. Our electricians provide residential and commercial electrical
@@ -32,19 +33,19 @@ export default function Index() {
         <title>AsterElectric | Home</title>
         <meta name="description" content={description}></meta>
       </Head>
-      <div className={styles.container}>
+      <div className={styles.layout}>
         <Navigation />
-        {/* First Section : Hero Image + Main Header */}
-        <Hero />
-        {/* Second Section : A brief About us with a link to the about us page*/}
-        <Intro />
-        {/* Third Section : Electrical services Intro */}
-        <ServicesIntro />
-        {/* Third Section : Electrical services */}
-        <Services />
-        {/* Fourth Section : Reviews */}
-        <div className={styles.reviewsContainer}>
-          <h2 className={styles.aboutHeader}>Testimonials</h2>
+        <div className={styles.container}>
+          {/* First Section : Hero Image + Main Header */}
+          <Hero />
+          {/* Second Section : A brief About us with a link to the about us page*/}
+          <Intro />
+          {/* Third Section : Electrical services Intro */}
+          <ServicesIntro />
+          {/* Third Section : Electrical services */}
+          <Services />
+          {/* Reviews */}
+          <Reviews />
         </div>
       </div>
     </main>
