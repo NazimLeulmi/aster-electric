@@ -1,6 +1,5 @@
 .servicesContainer  {
     composes: aboutContainer from "./intro.module.css";
-    background-color:#eff1f3;
     flex:1;
 }
 .servicesIntro  {
@@ -11,6 +10,8 @@
     align-self:center;
     margin:10px;
     color:#223843;
+    border-bottom: 1px solid #3448BE;
+    text-align: center;
 }
 .servicesImg{
     width:75px;
@@ -26,4 +27,10 @@
   .servicesFlex {
     flex-direction: row;
   }
+}
+.service {
+  font-family: Caladea;
+  font-weight:300;
+  font-size: 1.1em;
+  color:#223843;
 }

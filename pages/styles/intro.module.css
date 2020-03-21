@@ -3,6 +3,7 @@
     display:flex;
     flex-direction: column;
     padding:15px;
+    align-items: center;
 }
 .aboutHeader {
   color:#3448BE;
@@ -14,18 +15,21 @@
   color:#223843;
   font-family: Caladea;
   font-size:1.1em;
+  text-align: center;
+  width:90%;
+  max-width:650px;
+  margin:5px;
 }
 .aboutLink {
   text-decoration: none;
-  border:1px solid #3448BE;
-  color:#3448BE;
   font-family: Montserrat;
+  border:1px solid #3448BE;
+  border-radius:5px;
+  color:#3448BE;
   width:150px;
   display:flex;
   justify-content: center;
   align-items:center;
   padding:10px;
-  align-self:flex-end;
-  border-radius:5px;
   margin:10px;
 }

@@ -5,7 +5,7 @@ export default function Hero() {
       <div className={styles.overlay} />
       <h1 className={styles.headerOne}>
         FULLY LICENSED ELECTRICIANS BASED IN VICTORIA,BC
-          </h1>
+      </h1>
       <img src="/bulb.jpg" alt="light bulb art" className={styles.img} />
     </div >
   );
