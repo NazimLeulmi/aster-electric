@@ -8,7 +8,9 @@ export default function ServicesIntro() {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Electrical services</h2>
-      <p className={styles.paragraph}>{text}</p>
+      <p className={styles.paragraph}>
+        {text}
+      </p>
     </div>
   );
 }

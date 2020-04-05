@@ -1,5 +1,5 @@
 .container{
-  composes: aboutContainer from "./intro.module.css";
+  composes: container from "./intro.module.css";
 }
 .header {
   composes: aboutHeader from "./intro.module.css";

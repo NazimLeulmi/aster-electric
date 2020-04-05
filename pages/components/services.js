@@ -1,14 +1,14 @@
 import styles from "../styles/services.module.css"
 export const residential = [
-	"New Construction", "Service Upgrades",
-	"Renovations", "Service Calls",
-	"Electrical Repairs", "Electrical Troubleshooting", "Electrical Inspections",
+	"New construction", "Service upgrades",
+	"Renovations", "Service calls", "Home rewiring",
+	"Electrical repairs", "Electrical troubleshooting", "Electrical inspections",
 ]
 
 export const commercial = [
-	"Home Rewiring", "Lighting Installation",
-	"Wiring Electrical Panels and Sub Panels", "Electrical Equipment Installations Calls",
-	"EV Charging Station Installation", "Data/Communication",
+	, "Lighting Installation", "Service calls", "Electrical inspections",
+	"Wiring electric panels & sub panels", "Electrical equipment Installations",
+	"EV charging station Installation", "Data/Communication", "Service upgrades"
 ]
 
 export default function Services() {

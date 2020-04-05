@@ -1,0 +1,7 @@
+
+.layout{
+  composes:layout from "./index.module.css";
+}
+.container{
+  composes:container from "./index.module.css";
+}

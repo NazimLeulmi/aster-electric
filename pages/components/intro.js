@@ -9,11 +9,13 @@ attention to details, and fair and competitive pricing.
 `
 export default function Intro() {
   return (
-    <div className={styles.aboutContainer}>
+    <div className={styles.container}>
       <h2 className={styles.aboutHeader}>Who are we ?</h2>
-      <p className={styles.aboutParagraph}>{aster}</p>
+      <p className={styles.aboutParagraph}>
+        {aster}
+      </p>
       <Link href="/about">
-        <a className={styles.aboutLink}>About us</a>
+        <a className={styles.aboutLink}>Read more</a>
       </Link>
     </div>
   );

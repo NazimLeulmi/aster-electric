@@ -1,6 +1,9 @@
+
+.container {
+  composes: container from "./intro.module.css";
+}
 .header {
   composes: aboutHeader from "./intro.module.css";
-  background:rgba(0,0,0,.10);
 }
 .rating {
   composes: aboutHeader from "./intro.module.css";
@@ -26,8 +29,14 @@
   flex-direction: column;
   align-items:center;
   justify-content: center;
-  background:rgba(0,0,0,.10);
 }
 .stars {
   display:flex;
+}
+.link {
+  composes: aboutLink from "./intro.module.css";
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+  margin-top:40px;
 }

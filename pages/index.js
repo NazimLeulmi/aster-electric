@@ -7,7 +7,7 @@ import Intro from "./components/intro";
 import ServicesIntro from "./components/servIntro";
 import Reviews from "./components/reviews";
 
-const description = `Aster Electric offers quality electrical services in 
+export const description = `Aster Electric offers quality electrical services in 
 Victoria, BC. Our electricians provide residential and commercial electrical
 installation and repairs.`
 const safety = `Safety is a huge part of the way we do business. All of our employees are
@@ -20,11 +20,7 @@ property's value. When you use WireChief Electric - Licensed & Insured Electrica
 Contractor - for your electrical installations, renovation projects or new construction
 you are getting quality work, expert advice,  & friendly customer service by experienced electricians.
 `
-const why = `
-Our focus in providing quality residential and commercial services combined with honest 
-and reliable electricians makes us the first choice of many home and business owners in the area.
-All work is performed or supervised by electricians with more that 25 years of experience who are licensed
-`
+
 
 export default function Index() {
   return (

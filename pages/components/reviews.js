@@ -45,14 +45,14 @@ class Reviews extends React.Component {
   render() {
     const { reviews, counter, sliderSettings } = this.state;
     return (
-      <div  >
+      <div className={styles.container} >
         <h2 className={styles.header} style={{ textAlign: "center" }}>
           Customer Reviews
          </h2>
         <Slider {...sliderSettings} >
           {reviews.map((review) => {
             return (
-              <div className={styles.slide}>
+              <div className={styles.slide} key={review.text}>
                 <img src={review.img} className={styles.avatar} />
                 <h3 className={styles.from}>{review.from}</h3>
                 <h4 className={styles.rating}>5/5</h4>
@@ -68,6 +68,9 @@ class Reviews extends React.Component {
             )
           })}
         </Slider>
+        <a className={styles.link} href="google.com">
+          Write a review
+        </a>
       </ div>
     );
   }
