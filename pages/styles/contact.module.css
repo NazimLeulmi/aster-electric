@@ -18,6 +18,7 @@
   flex-direction: column;
   align-items: center;
   flex:1;
+  background:white;
 }
 .header{
   font-size: 1.3rem;
@@ -35,15 +36,15 @@
 }
 
 .input{
-  border:0;
-  border-left: 2px solid #545559;
+  border:1px solid gray;
+  border-bottom: 2px solid #545559;
   width:100%;
   height:100%;
   padding-left:15px;
   color:#545559;
   font-size:1.1rem;
-  background:rgba(0,0,0,.15);
   outline:0;
+  background: transparent;
 }
 .input:focus + label{
   font-weight: bold;
@@ -51,6 +52,9 @@
 
 .label{
   color:#545559;
+  background: white;;
+  padding-left:5px;
+  padding-right:5px;
   position:absolute;
   left:15px;
   top:-10px;
@@ -94,8 +98,10 @@
   .formContainer{
     position: relative;
     display:flex;
-    width:75%;
-    height:75%;
+    width:80%;
+    max-width:800px;
+    height:90%;
+    max-height: 600px;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);

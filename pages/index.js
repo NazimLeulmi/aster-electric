@@ -1,10 +1,10 @@
 import Head from "next/head";
 import styles from "./styles/index.module.css";
 import Navigation from "./components/nav";
-import Hero from "./components/hero";
-import Services from "./components/services";
-import Intro from "./components/intro";
-import ServicesIntro from "./components/servIntro";
+import Intro from "./sections/intro";
+import Hero from "./sections/hero";
+import Services from "./sections/services";
+// import Intro from "./components/intro";
 import Reviews from "./components/reviews";
 
 
@@ -22,16 +22,11 @@ export default function Index() {
       <div className={styles.layout}>
         <Navigation />
         <div className={styles.container}>
-          {/* First Section : Hero Image + Main Header */}
-          <Hero />
-          {/* Second Section : A brief About us with a link to the about us page*/}
           <Intro />
-          {/* Third Section : Electrical services Intro */}
-          <ServicesIntro />
-          {/* Third Section : Electrical services */}
+          <Hero />
           <Services />
           {/* Reviews */}
-          <Reviews />
+          {/* <Reviews /> */}
         </div>
       </div>
     </main>

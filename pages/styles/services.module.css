@@ -1,31 +1,39 @@
-.servicesFlex{
+.layout{
+    position: relative;
     display:flex;
     flex-direction: column;
     width:100%;
-    max-width:700px;
-    margin-top:10px;
+    min-height:900px;
+    padding-top:20px;
+    /* background:lightgray; */
+    background: #545559;
+    z-index:-3;
+    align-items: center;
+    justify-content: center;
 }
-.servicesContainer  {
+.container  {
+  width:90%;
+  height:425px;
   display:flex;
   flex-direction: column;
-  flex:1;
   justify-content: center;
   align-items: center;
   padding:15px;
+  background:rgba(255,255,255,.45);
+  margin-top:50px;
 }
-.servicesIntro  {
-    composes: servicesContainer;
-}
+
 .servicesHeader{
-    composes: aboutHeader from "./intro.module.css";
     font-weight: bold;
     margin-top:5px;
     margin-bottom:5px;
-    color:#223843;
+    color:lightgray;
 }
 .servicesImg{
-    width:75px;
-    margin:5px;
+  width:75px;
+  height:75px;
+  margin:5px;
+  fill: #545559;
 }
 
 
@@ -33,10 +41,11 @@
   font-family: Montserrat;
   font-weight:300;
   font-size: 1.1em;
-  color:#223843;
+  text-align: center;
+  color: #545559;
 }
 @media only screen and (min-width: 550px) {
-  .servicesFlex {
+  .layout {
     flex-direction: row;
   }
 }

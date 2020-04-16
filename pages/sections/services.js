@@ -1,4 +1,7 @@
 import styles from "../styles/services.module.css"
+import House from "../../public/house.svg"
+import Building from "../../public/building.svg"
+
 export const residential = [
 	"New construction", "Service upgrades",
 	"Renovations", "Service calls", "Home rewiring",
@@ -7,16 +10,16 @@ export const residential = [
 
 export const commercial = [
 	, "Lighting Installation", "Service calls", "Electrical inspections",
-	"Wiring electric panels & sub panels", "Electrical equipment Installations",
+	"Wiring electric panels & sub panels", "Electrical equipment installations",
 	"EV charging station Installation", "Data/Communication", "Service upgrades"
 ]
 
 export default function Services() {
 	return (
-		<div className={styles.servicesFlex}>
+		<div className={styles.layout}>
 			{/* Section 3.1 : Residential services*/}
-			<div className={styles.servicesContainer}>
-				<img src="/house.png" alt="Residential Services" className={styles.servicesImg} />
+			<div className={styles.container}>
+				<House className={styles.servicesImg} />
 				<h3 className={styles.servicesHeader}>RESIDENTIAL</h3>
 				{residential.map((service) => {
 					return (
@@ -27,8 +30,8 @@ export default function Services() {
 				})}
 			</div>
 			{/* Section 3.2 : Commercial services*/}
-			<div className={styles.servicesContainer}>
-				<img src="/building.png" alt="Commercial Services" className={styles.servicesImg} />
+			<div className={styles.container}>
+				<Building className={styles.servicesImg} />
 				<h3 className={styles.servicesHeader}>COMMERCIAL</h3>
 				{commercial.map((service) => {
 					return (

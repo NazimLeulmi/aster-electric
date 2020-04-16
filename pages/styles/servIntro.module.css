@@ -1,9 +1,0 @@
-.container{
-  composes: container from "./intro.module.css";
-}
-.header {
-  composes: aboutHeader from "./intro.module.css";
-}
-.paragraph {
-  composes: aboutParagraph from "./intro.module.css";
-}
