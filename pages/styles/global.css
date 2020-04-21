@@ -96,9 +96,7 @@ select {
   line-height: 20px !important;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 *{
   font-family: Montserrat;
+  scroll-behavior: smooth;
 }

@@ -1,12 +1,17 @@
 
 .container {
-  composes: container from "./intro.module.css";
+  position: relative;
+  max-width:100%;
+  display:flex;
+  flex-direction: column;
 }
 .header {
-  composes: aboutHeader from "./intro.module.css";
+  font-weight: 300;
+  margin-top:40px;
+  margin-bottom:20px;
+  color: #545559;
 }
 .rating {
-  composes: aboutHeader from "./intro.module.css";
 }
 .avatar{
   width:50px;
@@ -18,9 +23,9 @@
   margin:0;
 }
 .text {
-  composes: aboutParagraph from "./intro.module.css";
   text-align:center;
   width:80%;
+  max-width: 700px;
   margin:5px;
 }
 .slide{
@@ -32,11 +37,25 @@
 }
 .stars {
   display:flex;
+  margin:5px; 
 }
 .link {
-  composes: aboutLink from "./intro.module.css";
+  text-decoration: none;
   position: relative;
-  left:50%;
-  transform: translateX(-50%);
   margin-top:40px;
+  width:100%;
+  background: #545559;
+  padding:15px;
+  text-align: center;
+  color:lightgray
+}
+
+@media only screen and (min-width: 850px) {
+  .link{
+    max-width:300px;
+    left:50%;
+    transform: translateX(-50%);
+    margin-bottom:20px;
+    border-radius: 5px;
+  }
 }

@@ -45,7 +45,7 @@ class Reviews extends React.Component {
   render() {
     const { reviews, counter, sliderSettings } = this.state;
     return (
-      <div className={styles.container} >
+      <section className={styles.container} id="reviews-section" >
         <h2 className={styles.header} style={{ textAlign: "center" }}>
           Customer Reviews
          </h2>
@@ -71,7 +71,7 @@ class Reviews extends React.Component {
         <a className={styles.link} href="google.com">
           Write a review
         </a>
-      </ div>
+      </ section>
     );
   }
 }

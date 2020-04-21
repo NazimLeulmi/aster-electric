@@ -1,12 +1,8 @@
-.layout{
-  composes:layout from "./index.module.css";
-  position: relative;
-  height:100vh;
-}
 .container{
   position: relative;
-  width:100%;
-  background:linear-gradient(lightblue,lightgray);
+  max-width:100%;
+  /* background:linear-gradient(lightblue,lightgray); */
+  background:lightgray; 
 }
 .img{
   display:none;
@@ -18,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   flex:1;
-  background:white;
+  background:lightgray;
 }
 .header{
   font-size: 1.3rem;
@@ -52,7 +48,7 @@
 
 .label{
   color:#545559;
-  background: white;;
+  background:lightgray;
   padding-left:5px;
   padding-right:5px;
   position:absolute;
@@ -93,7 +89,7 @@
 @media only screen and (min-width: 850px) {
   .container{
     width:82vw;
-    height:100vh;
+    min-height:700px;
   }
   .formContainer{
     position: relative;
@@ -109,6 +105,10 @@
   }
   .form{
     width:50%;
+    background:white;
+  }
+  .label{
+    background:white;
   }
   .img {
     display:block;

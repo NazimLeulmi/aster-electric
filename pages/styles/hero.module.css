@@ -9,6 +9,7 @@
   align-items:center;
   justify-content: center;
   background:#eff1f3;
+  padding:20px;
 }
 .container:after{
   position: absolute;

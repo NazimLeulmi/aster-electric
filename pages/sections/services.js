@@ -16,7 +16,7 @@ export const commercial = [
 
 export default function Services() {
 	return (
-		<div className={styles.layout}>
+		<section className={styles.layout} id="services-section">
 			<h2 className={styles.header}>Electrical services</h2>
 			{/* Section 3.1 : Residential services*/}
 			<div className={styles.container}>
@@ -42,7 +42,7 @@ export default function Services() {
 					)
 				})}
 			</div>
-		</div>
+		</section>
 	);
 }
 

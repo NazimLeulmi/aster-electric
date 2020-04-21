@@ -4,30 +4,56 @@ import Close from "../../public/close.svg";
 import Home from "../../public/home.svg";
 import About from "../../public/about.svg";
 import Contact from "../../public/contact.svg";
-import Star from "../../public/star.svg";
-import Location from "../../public/location.svg";
 import Services from "../../public/services.svg";
-import Phone from "../../public/phone.svg";
-import Facebook from "../../public/facebook.svg";
-import Gallery from "../../public/gallery.svg";
-import Link from "./link";
+import Reviews from "../../public/msg.svg";
 export default class NavBar extends React.Component {
 	state = {
 		isOpened: false,
+		active: "intro"
+	}
+	componentDidMount = () => {
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			return;
+		} else {
+			const container = document.getElementById("main-container");
+			container.addEventListener("scroll", (e) => {
+				const { active } = this.state;
+				const scroll = parseInt(container.scrollTop);
+				if (scroll > 0 && scroll <= 750) {
+					if (active === "intro") return;
+					this.setState({ active: "intro" })
+				} else if (scroll > 750 && scroll < 1200) {
+					if (active === "services") return;
+					this.setState({ active: "services" })
+				} else if (scroll > 1400 && scroll < 1850) {
+					if (active === "about") return;
+					this.setState({ active: "about" })
+				} else if (scroll > 1850 && scroll < 2000) {
+					if (active === "contact") return;
+					this.setState({ active: "contact" })
+				}
+				else if (scroll > 2000) {
+					if (active === "reviews") return;
+					this.setState({ active: "reviews" })
+				}
+			})
+		}
+	}
+	componentWillUnmount = () => {
+		const container = document.getElementById("main-container");
+		container.removeEventListener("scroll");
 	}
 	triggerMenu = (e) => {
 		const { isOpened } = this.state;
 		const linksContainer = document.querySelector("#links-container");
 		const links = document.querySelectorAll("#links-container > div");
-		console.log(linksContainer, "container");
-		console.log(links, "linksArray");
 		if (isOpened === true) {
 			for (let i = 0; i < links.length; i++) {
 				links[i].style.display = "none";
 			}
 			linksContainer.style.height = "0px"
 		} else {
-			linksContainer.style.height = "auto"
+			linksContainer.style.height = "500px"
 			// setTimeout(() => {
 			for (let i = 0; i < links.length; i++) {
 				links[i].style.display = "flex";
@@ -37,11 +63,13 @@ export default class NavBar extends React.Component {
 		}
 		this.setState({ isOpened: !isOpened });
 	}
-	triggerLink = (e) => {
-
+	link = (e) => {
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			this.triggerMenu();
+		}
 	}
 	render() {
-		const { isOpened } = this.state;
+		const { isOpened, active } = this.state;
 		return (
 			<nav className={styles.nav}>
 				{/* Company Logo & Name */}
@@ -57,57 +85,69 @@ export default class NavBar extends React.Component {
 				{/* Links */}
 				<div className={styles.linksContainer} id="links-container">
 					<div className={styles.group}>
-						<About fill="#979ba6" className={styles.icon} />
-						<Link activeClassName={styles.active} href="/about">
-							<a className={styles.link}>About</a>
-						</Link>
-					</div>
-					<div className={styles.group}>
 						<Home fill="#979ba6" className={styles.icon} />
-						<Link activeClassName={styles.active} href="/">
-							<a className={styles.link}>Home</a>
-						</Link>
-					</div>
-					<div className={styles.group}>
-						<Contact fill="#979ba6" className={styles.icon} />
-						<Link activeClassName={styles.active} href="/contact">
-							<a className={styles.link}>Contact</a>
-						</Link>
+						<a href="#intro-section"
+							className={active === "intro" ? styles.active : styles.link}
+							name="intro"
+							onClick={this.link}
+						>
+							Home
+						</a>
 					</div>
 					<div className={styles.group}>
 						<Services fill="#979ba6" className={styles.icon} />
-						<Link activeClassName={styles.active} href="/services" >
-							<a className={styles.link}>Services</a>
-						</Link>
+						<a href="#services-section"
+							className={active == "services" ? styles.active : styles.link}
+							name="services"
+							onClick={this.link}
+						>
+							Services
+						</a>
 					</div>
 					<div className={styles.group}>
-						<Gallery fill="#979ba6" className={styles.icon} />
-						<Link href="/gallery" activeClassName={styles.active} >
-							<a className={styles.link}>Gallery</a>
-						</Link>
+						<About fill="#979ba6" className={styles.icon} />
+						<a href="#about-section"
+							className={active === "about" ? styles.active : styles.link}
+							name="about"
+							onClick={this.link}
+						>
+							About
+					  </a>
+					</div>
+
+					<div className={styles.group}>
+						<Contact fill="#979ba6" className={styles.icon} />
+						<a href="#contact-section"
+							className={active === "contact" ? styles.active : styles.link}
+							name="contact"
+							onClick={this.link}
+						>
+							Contact
+						</a>
+					</div>
+
+					<div className={styles.group}>
+						<Reviews fill="#979ba6" className={styles.icon} />
+						<a href="#reviews-section"
+							className={active === "reviews" ? styles.active : styles.link}
+							name="reviews"
+							onClick={this.link}
+						>
+							Reviews
+						</a>
 					</div>
 					{/* Footer */}
-					<div className={styles.footer} style={{ marginTop: "auto" }}>
-						<Contact fill="#979ba6" className={styles.footerIcon} />
+					<div className={styles.footer} >
 						<p className={styles.Txt}>info@asterelectric.ca</p>
-					</div>
-					<div className={styles.footer}>
-						<Phone fill="#979ba6" className={styles.footerIcon} />
 						<p className={styles.Txt}>250-727-6596</p>
-					</div>
-					<div className={styles.footer}>
-						<Facebook fill="#979ba6" className={styles.footerIcon} />
 						<a className={styles.Txt}
 							href="https://www.facebook.com/AsterElectric.Victoria/">
 							Facebook page
 						</a>
-					</div>
-					<div className={styles.footer}>
-						<Location fill="#979ba6" className={styles.footerIcon} />
 						<p className={styles.Txt}>3631 Savannah avenue</p>
 					</div>
 				</div>
-			</nav>
+			</nav >
 		)
 	}
 }

@@ -3,17 +3,12 @@ import Phone from "../../public/phone.svg";
 import Envelop from "../../public/contact.svg"
 import Msg from "../../public/msg.svg"
 
-const why = `
-Our focus in providing quality residential and commercial services combined 
-with honest and reliable electricians makes us the first choice of many home 
-and business owners in the area.All work is performed or supervised by 
-experienced electricians.`
 
 const text = `We are passionate and specialized in every aspect of the electrical trade. 
 From residential to commercial electrical services`
 export default function Hero() {
   return (
-    <section className={s.container} >
+    <section className={s.container} id="intro-section">
       <h1 className={s.headerOne}>
         FULLY LICENSED ELECTRICIANS BASED IN VICTORIA BC
       </h1>
@@ -28,7 +23,7 @@ export default function Hero() {
           Text
       </a>
       </div>
-      <a href="#" className={s.link}>
+      <a href="#contact-section" className={s.link}>
         <Envelop className={s.icon} />
         Request a quate
       </a>

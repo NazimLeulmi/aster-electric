@@ -1,0 +1,17 @@
+.container{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    min-height:450px;
+    min-width:100%;
+    background:lightgray;
+    align-items: center;
+    justify-content: center;
+    padding:15px;
+}
+.container:after{
+  background:white;
+}
+.paragraph{
+  composes:paragraph from "./hero.module.css"
+}

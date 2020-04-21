@@ -4,8 +4,9 @@ import Navigation from "./components/nav";
 import Intro from "./sections/intro";
 import Hero from "./sections/hero";
 import Services from "./sections/services";
-// import Intro from "./components/intro";
-import Reviews from "./components/reviews";
+import About from "./sections/about";
+import Contact from "./sections/contact";
+import Reviews from "./sections/reviews";
 
 
 export const description = `Aster Electric offers quality electrical services in 
@@ -19,14 +20,15 @@ export default function Index() {
         <title>AsterElectric | Home</title>
         <meta name="description" content={description}></meta>
       </Head>
-      <div className={styles.layout}>
+      <div className={styles.layout} id="main-layout">
         <Navigation />
-        <div className={styles.container}>
+        <div className={styles.container} id="main-container" >
           <Intro />
           <Hero />
           <Services />
-          {/* Reviews */}
-          {/* <Reviews /> */}
+          <About />
+          <Contact />
+          <Reviews />
         </div>
       </div>
     </main>
