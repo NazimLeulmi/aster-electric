@@ -37,6 +37,7 @@
   width:100%;
   height:100%;
   padding-left:15px;
+  padding-right:50px;
   color:#545559;
   font-size:1.1rem;
   outline:0;
@@ -79,9 +80,17 @@
   border:0px;
   background-color:#545559;
   color:white;
+  outline: none;
 }
 .btn:hover{
   font-weight: bold;
+}
+.error {
+  width:90%;
+  color:#8a2728;
+  font-weight: bold;
+  font-size: .9rem;
+  margin-bottom:10px;
 }
 
 /* color:#eff1f3; */

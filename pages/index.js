@@ -17,7 +17,7 @@ export default function Index() {
   return (
     <main>
       <Head>
-        <title>AsterElectric | Home</title>
+        <title>Aster Electric</title>
         <meta name="description" content={description}></meta>
       </Head>
       <div className={styles.layout} id="main-layout">
