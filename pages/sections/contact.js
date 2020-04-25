@@ -19,62 +19,43 @@ export default class Contact extends React.Component {
     subject: "",
     text: "",
     errors: [],
-    valid: false
+    loading: false
   }
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }
-  validateForm = (e) => {
-    const { name, email, phone, subject, text, valid } = this.state;
-    let errors = [];
-    // name input validation 
-    if (name === "" || name === null || name === undefined) {
-      errors.push("The name is required");
-    } else if (name.length > 150) {
-      errors.push("The name is too long");
-    }
-    // email validation
-    if (email === "" || email === null || email === undefined) {
-      errors.push("The email is required");
-    }
-    else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) == false) {
-      errors.push("The email is invalid")
-    }
-    else if (email.length > 200) {
-      errors.push("The email is too long");
-    }
-    // phone validation
-    const regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    if (phone != "" && regex.test(phone) == false) {
-      errors.push("The phone number is invalid")
-    }
-    // subject
-    if (subject === "" || subject === null || subject === undefined) {
-      errors.push("The subject is required");
-    } else if (subject.length > 200) {
-      errors.push("The subject is too long");
-    }
-    // text
-    if (text === "" || text === null || text === undefined) {
-      errors.push("The message is required");
-    }
-
-    this.setState({ errors, valid: errors.length === 0 })
-  }
   submit = (e) => {
     e.preventDefault();
-    const { name, email, phone, subject, text, valid } = this.state;
-    // this.validateForm();
-    // if (valid === false) return;
+    const { name, email, phone, subject, text } = this.state;
     const xhr = new XMLHttpRequest();
-    xhr.withCredentials = "true";
     const url = "http://localhost/php/email.php";
     xhr.open("GET", `${url}?name=${name}&email=${email}&phone=${phone}&subject=${subject}&text=${text}`, true)
-    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhr.onload = () => {
-      console.log(xhr.response)
+      this.setState({ loading: false })
+      if (/^[\],:{}\s]*$/.test(xhr.responseText.replace(/\\["\\\/bfnrtu]/g, '@').
+        replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
+        replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
+        console.log("valid JSON response")
+        const fromPhp = JSON.parse(xhr.responseText);
+        this.setState({ errors: fromPhp.errors });
+      } else {
+        console.log("invalid JSON")
+        this.setState({ errors: ["The email has been sent"] });
+        const element = document.getElementById("error");
+        element.style.color = "blue"
+      }
     }
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState == 3) {
+        console.log("Loading");
+        this.setState({ loading: true })
+      }
+      if (xhr.readyState == 4) {
+        console.log("Finished Loading");
+        this.setState({ loading: false })
+      }
+    };
     xhr.onerror = (e) => {
       console.log(e);
     }
@@ -138,9 +119,14 @@ export default class Contact extends React.Component {
             <Msg className={styles.icon} />
           </div>
           {this.state.errors.length === 0 ? null :
-            <p className={styles.error}>{this.state.errors[0]}</p>
+            <p className={styles.error} id="error">{this.state.errors[0]}</p>
           }
-          <button className={styles.btn} onClick={this.submit}>SUBMIT</button>
+          <button className={styles.btn}
+            onClick={this.submit}
+            disabled={this.state.loading}>
+            {this.state.loading ? <div className={styles.spinner} /> : null}
+            SUBMIT
+          </button>
         </form>
       </div>
     </section>

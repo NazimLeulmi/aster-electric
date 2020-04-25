@@ -1,5 +1,4 @@
 <?php
-header("Access-Control-Allow-Origin: *");
 require_once realpath(__DIR__ . "/vendor/autoload.php");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -18,6 +17,7 @@ $from = $_GET["email"];
 $subject = $_GET["subject"];
 $text = $_GET["text"];
 $phone = $_GET["phone"];
+
 
 // Form data validation
 $errors = [];
@@ -45,48 +45,40 @@ if($subject == null || $subject == ""){
   array_push($errors,"The subject is too long");
 }
 if($text == null || $text == ""){
-  array_push($errors,"The Message is required");
+  array_push($errors,"The message is required");
 }
-
 if(count($errors) !== 0){
-	// echo "form data is invalid";
-  $payload = array("errors"=>$errors,"valid"=>false);
-  echo json_encode($payload);
+  $payload = array("errors"=>$errors,"isValid"=>false);
+  print(json_encode($payload));
   return;
+}else{
+  $payload = array("errors"=>$errors,"isValid"=>true);
+  print(json_encode($payload));
 }
-// }else{
-//   // Send the mail
-//   // Instantiation and passing `true` enables exceptions
-//   $mail = new PHPMailer(true);
-//   try {
-//   //Server settings
-//     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-//     $mail->isSMTP();                                            // Send using SMTP
-//     $mail->Host       = 'smtp.gmail.com';                       // Set the SMTP server to send through
-//     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-//     $mail->Username   = getenv('EMAIL');                        // SMTP username
-//     $mail->Password   = getenv('PASSWORD');                     // SMTP password
-//     $mail->SMTPSecure = 'tls';                                  // TLS = 587 , SSL = 465
-//     $mail->Port       = 587;                                    
-//     //Recipients
-//     $mail->setFrom($from, 'From the website');
-//     $mail->addAddress(getenv('TO'));
-//     $mail->addReplyTo($from, 'Requesting a quate');
-//     // Content
-//     $mail->isHTML(true);                                         // Set email format to HTML
-//     $mail->Subject = 'Here is the subject: $subject';
-//     $mail->Body    = 'This is the HTML message body <b>$text</b>';
-//     $mail->AltBody = '$text';
-//     $mail->send();
-//     echo 'Message has been sent';
-// } catch (Exception $e) {
-//     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-// }
+// Send the mail
+// Instantiation and passing `true` enables exceptions
+$mail = new PHPMailer(true);
+  //Server settings
+  $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+  $mail->isSMTP();                                            // Send using SMTP
+  $mail->Host       = 'smtp.gmail.com';                       // Set the SMTP server to send through
+  $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+  $mail->Username   = getenv('EMAIL');                        // SMTP username
+  $mail->Password   = getenv('PASSWORD');                     // SMTP password
+  $mail->SMTPSecure = 'tls';                                  // TLS = 587 , SSL = 465
+  $mail->Port       = 587;                                    
+  //Recipients
+  $mail->setFrom($from, 'Aster Electric');
+  $mail->addAddress("nazim@ryanleulmi.com");
+  $mail->addReplyTo($from, 'Requesting a quate');
+  // Content
+  $mail->isHTML(true);                                         // Set email format to HTML
+  $mail->Subject = $subject;
+  $mail->Body    = $text;
+  $mail->send();
 
 
-}
 
-echo "after the validation";
 
 
 
