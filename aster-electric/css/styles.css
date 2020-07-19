@@ -1,0 +1,34 @@
+.header {
+  font-weight:400;
+  letter-spacing: 1.5px;
+  margin-top:25px;
+  margin-bottom:25px;
+}
+.logo {
+  position: relative;
+  left:50%;
+  transform:translateX(-50%);
+  margin-top:15px;
+  margin-bottom:15px;
+}
+.nav-break{
+  width:90%;
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+}
+.sidenav .divider {
+  margin-top:25px;
+  margin-bottom:25px;
+}
+
+.nav-text {
+  text-align: center;
+  color: rgba(0,0,0,0.87);
+  position: relative;
+  left:50%;
+  transform:translateX(-50%);
+  display:block;
+  width:90%;
+  margin-top:10px;
+}
