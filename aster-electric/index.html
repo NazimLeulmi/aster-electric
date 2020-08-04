@@ -10,28 +10,210 @@
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASTER ELECTRIC</title>
 </head>
 
 <body>
   <!-- SIDE NAV -->
-  <ul id="slide-out" class="sidenav sidenav-fixed">
-    <img src="assets/dark-bulb.jpg" alt="Dark-Bulb" width="100%">
-    <h5 class="center-align header">ASTER ELECTRIC</h5>
-    <img src="assets/aster.png" alt="Logo" class="logo">
-    <li><a href="#!"><i class="material-icons waves-effect">home</i>Home</a></li>
-    <li><a href="#!"><i class="material-icons waves-effect">electrical_services</i>Services</a></li>
-    <li><a href="#!"><i class="material-icons waves-effect">supervised_user_circle</i>About</a></li>
-    <li><a href="#!"><i class="material-icons waves-effect">alternate_email</i>Contact</a></li>
-    <li><a href="#!"><i class="material-icons waves-effect">rate_reviews</i>Reviews</a></li>
-    <div class="divider nav-break"></div>
+  <ul id="slide-out" class="table-of-contents sidenav sidenav-fixed" style="padding-top:50px;">
+    <li><a href="#home"><i class="material-icons ">home</i>Home</a></li>
+    <li><a href="#services"><i class="material-icons ">electrical_services</i>Services</a></li>
+    <li><a href="#about"><i class="material-icons ">supervised_user_circle</i>About</a></li>
+    <li><a href="#contact"><i class="material-icons">alternate_email</i>Contact</a></li>
+    <li><a href="#reviews"><i class="material-icons">rate_reviews</i>Reviews</a></li>
+    <div class="divider nav-break divid"></div>
     <a href="mailto:info@asterelectric.ca" class="nav-text">info@asterelectric.ca</a>
     <a href="#" class="nav-text">3631 Savannah Ave</a>
     <a href="tel:2507276596" class="nav-text">250-727-6596</a>
     <a href="https://www.facebook.com/AsterElectric.Victoria/" class="nav-text">Facebook</a>
     <div class="divider nav-break"></div>
   </ul>
-  <!-- SIDE NAV -->
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  <nav class="nav">
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  </nav>
+  <!-- HERO -->
+  <section class="hero section scrollspy  row" id="home">
+    <!-- HERO INTRO -->
+    <div class="col m7 s12 title-container">
+      <h1 class="main-header">FULLY LICENSED ELECTRICIANS BASED IN VICTORIA BC</h1>
+      <h2 class="sub-header">
+        We are passionate and specialized in every aspect of the electrical trade.
+        From residential to commercial electrical services.
+      </h2>
+      <a class="waves-effect waves-light btn">
+        Request a quate
+        <i class="material-icons right">email</i>
+      </a>
+      <a class="waves-effect waves-light btn hide-on-med-and-up"><i class="material-icons right">call</i>Call us</a>
+      <a class="waves-effect waves-light btn hide-on-med-and-up"><i class="material-icons right">chat</i>Text</a>
+    </div>
+    <!-- HERO LOGO -->
+    <div class="col m5 s12 logo-container">
+      <div class="logo">
+        <h3 class="aster">ASTER</h3>
+        <img src="assets/aster.svg" height="75px" alt="LOGO">
+        <h3 class="electric">ELECTRIC</h3>
+      </div>
+    </div>
+  </section>
+  <!-- PARALLAX -->
+  <div class="parallax-container first-parallax">
+    <div class="parallax"><img src="assets/lights.jpg" width="100%"></div>
+    <section class="safety">
+      <img src="assets/helmet.png" alt="helmet" class="safety-img">
+      <p class="flow-text">
+        Safety is a huge part of the way we do business. All of our employees are fully
+        licensed, and we make sure to instill a safety culture within the workplace. No
+        project will be handled without taking proper safety precautions.
+      </p>
+
+    </section>
+  </div>
+  <!-- SERVICES -->
+  <h2 class="services-main-header">OUR ELECTRICAL SERVICES</h2>
+  <section class="services row section scrollspy" id="services">
+    <div class="services-header-container col m6">
+      <img src="assets/commercial.png" alt="building" height="110" />
+      <h3 class="services-header">COMMERCIAL</h3>
+    </div>
+    <div class="services-header-container col m6">
+      <img class="services-header" src="assets/residential.png" alt="house" height="110" />
+      <h3 class="services-header">RESIDENTIAL</h3>
+    </div>
+  </section>
+  <section class="services-intro">
+    <p class="flow-text intro-text">
+      ASTER ELECTRIC provides professional and reliable electrical services and offers
+      a wide range of commercial and residential electrical services including, but not
+      limited to:
+    </p>
+  </section>
+  <section class="services row">
+    <ul class="services-container col m6">
+      <li class="service">Wiring electrical panels & sub panels</li>
+      <li class="service">EV charging station installation</li>
+      <li class="service">Data/Communication</li>
+      <li class="service">Lighting installation</li>
+      <li class="service">New construction</li>
+      <li class="service">Service calls</li>
+      <li class="service">Much more</li>
+    </ul>
+    <ul class="services-container col m6">
+      <li class="service">Electrical equipment installations</li>
+      <li class="service">Electrical troubleshooting</li>
+      <li class="service">Electrical inspections</li>
+      <li class="service">Electrical repairs</li>
+      <li class="service">Service upgrades</li>
+      <li class="service">Home rewiring</li>
+      <li class="service">Renovations</li>
+    </ul>
+  </section>
+  <section class="about-container section scrollspy" id="about" style="margin-left:300px;">
+    <h2 class="about-header">ABOUT <span class="us">US</span></h2>
+    <p class=" flow-text about-text">
+      Aster Electric is a licensed, bonded and fully insured electrical contracting company
+      based in Victoria, BC. It is a locally owned and operated company that provides
+      quality services throughout the Capital Regional District. Our qualified electricians
+      offer professional residential and commercial electrical installations. We provide the
+      highest standards of safety, attention to details, and fair and competitive pricing.
+    </p>
+  </section>
+  <section class="contact-section section scrollspy" id="contact">
+    <img src="assets/contact.png" alt="contact" height="90" width="90" style="margin-top:35px;">
+    <h2 class="contact-header">CONTACT <span class="us">US</span></h2>
+    <p class="flow-text contact-text">
+      Don't hesitate to contact us for all your residential and commercial electrical
+      needs in the Greater Victoria Region
+    </p>
+    <form class="contact-form">
+      <div class="input-field">
+        <input id="name" type="text" class="validate">
+        <label for="name">Name</label>
+      </div>
+      <div class="input-field">
+        <input id="email" type="email" class="validate">
+        <label for="email">Email</label>
+      </div>
+      <div class="input-field">
+        <input id="subject" type="text" class="validate">
+        <label for="subject">Subject</label>
+      </div>
+      <div class="input-field">
+        <input id="number" type="text" class="validate">
+        <label for="number">Number ( optional )</label>
+      </div>
+      <textarea id="message" placeholder="Your Message"></textarea>
+      <a class="waves-effect waves-light btn form-btn">
+        SUBMIT
+      </a>
+    </form>
+  </section>
+  <section class="reviews section scrollspy" id="reviews">
+    <div class="carousel">
+      <h2 class="carousel-header">REVIEWS</h2>
+      <a class="carousel-item" href="#">
+        <img src="assets/ChrisBenninger.png" alt="chris" class="avatar">
+        <p class="carousel-h">Chris Benninger</p>
+        <p style="padding:0;margin:0;">5/5</p>
+        <div style="display:flex;">
+          <i class="material-icons">stars</i>
+          <i class="material-icons">stars</i>
+          <i class="material-icons">stars</i>
+          <i class="material-icons">stars</i>
+          <i class="material-icons">stars</i>
+        </div>
+        <p>
+          Mazin came within a couple hours of calling him. Great work and fairly priced
+          . Graciously walked me through how things worked when I asked. Will be the
+          first place I call when we have more work to do.
+        </p>
+      </a>
+      <a class="carousel-item" href="#">
+        <img src="assets/LisaJoe.png" alt="Lisa" class="avatar">
+        <p class="carousel-h">Lisa Joe</p>
+        <p style="padding:0;margin:0;">5/5</p>
+        <div style="display:flex;">
+          <i class="material-icons">stars</i>
+          <i class="material-icons">stars</i>
+          <i class="material-icons">stars</i>
+          <i class="material-icons">stars</i>
+          <i class="material-icons">stars</i>
+        </div>
+        <p>
+          Wow! This electrician is awesome! I had a two fold issue: I needed a ceiling
+          light to be installed as well as a baseboard heater. All in all I am very
+          satisfied with the work that he completed. We are also very grateful that
+          he was willing to travel out to our home located in the Gulf Islands.
+          This company has a customer for life.
+        </p>
+      </a>
+      <a class="carousel-item" href="#">
+        <img src="assets/RossJohnson.png" alt="RossJohnson" class="avatar">
+        <p class="carousel-h">Ross Johnson</p>
+        <p style="padding:0;margin:0;">5/5</p>
+        <div style="display:flex;">
+          <i class="material-icons">stars</i>
+          <i class="material-icons">stars</i>
+          <i class="material-icons">stars</i>
+          <i class="material-icons">stars</i>
+          <i class="material-icons">stars</i>
+        </div>
+        <p>
+          Mazin did an outstanding job - his work was excellent, he was always on time,
+          his prices are very competitive, and he was very good at explaining what he was
+          doing. He is very polite and engaging. Part of moving in to a new community is
+          finding people you can trust, and Mazin is our go-to electrician now.
+          I wouldn't hesitate to recommend Aster Electric
+        </p>
+      </a>
+      <a class="waves-effect waves-light btn reviews-btn"
+        href="https://www.google.com/search?source=hp&ei=3QQpX5LvMtSU0PEPqNOF8AM&q=aster+electtric+review&oq=aster+electtric+review&gs_lcp=CgZwc3ktYWIQAzIHCCEQChCgATIHCCEQChCgAToLCC4QxwEQrwEQkwI6AggAOggIABAWEAoQHjoGCAAQFhAeOg0ILhDHARCvARANEJMCOgQIABANOggIABANEAoQHjoGCAAQDRAeOgoIABANEAUQChAeOggIABANEAUQHjoKCC4QxwEQowIQDVA_WOURYK8SaAFwAHgAgAHEAYgBow2SAQM3LjiYAQCgAQGqAQdnd3Mtd2l6&sclient=psy-ab&ved=0ahUKEwjS0Ye0-oDrAhVUCjQIHahpAT4Q4dUDCAg&uact=5#lrd=0x548f73f673b94e2d:0xe294588b2cf3b7b2,3,,,">
+        Write a review
+        <i class="material-icons right">rate_reviews</i>
+      </a>
+    </div>
+  </section>
+
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
